@@ -54,7 +54,7 @@ Q(income): How much income does your household bring in per year in after tax do
 X:number
 Q(civorcrim): Are you facing a civil or criminal matter?
 A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]: Civil
-A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualcrim') } else if (fedpov(getvar('house'),getvar('income'),131)) { goto('noqualbut') } else { goto('noqualcrim') } ]: Criminal
+A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualcrim') } else if (fedpov(getvar('house'),getvar('income'),126)) { goto('noqualbut') } else { goto('noqualcrim') } ]: Criminal
 
 
 Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. See <a href="https://www.oregonlaws.org/ors/21.682" target=_new>ORS 21.682</a>. Consequently, you may be eligible to have your court fees waived. Would you like me to open up a fee waiver for you to file? 
