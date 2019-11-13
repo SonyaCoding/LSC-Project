@@ -1,0 +1,87 @@
+Title: American Samoa Legal Aid Qualifier
+Author: Sonya
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">American Samoa Legal Aid Qualifier</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
+After: 
+<script>
+function fedpov(house,income,percentage){
+	// Determine if your income is less than or equal to 
+	// a percentage of the 2019 federal poverty guidelines 
+	// for the United States. See
+	// https://www.federalregister.gov/documents/2019/02/01/2019-00621/annual-update-of-the-hhs-poverty-guidelines
+	
+		var line = NaN;
+	
+		if (house == 1) {
+			line = 14380;
+		} else if (house == 2) {
+			line = 19460;
+		} else if (house == 3) {
+			line = 24540;
+		} else if (house == 4) {
+			line = 29620;
+		} else if (house == 5) {
+			line = 34700;
+		} else if (house == 6) {
+			line = 39780;
+		} else if (house == 7) {
+			line = 44860;
+		} else if (house == 8) {
+			line = 49940;
+		} else if (house > 8) {
+			line = 49940 + (house-8)*5080;
+		}
+	
+		if (income <= (line*(percentage/100))) {
+			return true;
+		} else {
+			return false;
+		}
+	}	
+</script>	
+
+Q(1): Would you like to find free legal aid in your area? 
+A: Yes
+	Q(1.1):GOTO:house
+A:[https://www.avvo.com/find-a-lawyer] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>.
+Q(house): How many people are in your household?
+X:number
+Q(income): How much income does your household bring in per year in after tax dollars?
+X:number
+Q(civorcrim): Are you facing a civil or criminal matter?
+A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]: Civil
+A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualcrim') } else { goto('noqualcrim') } ]: Criminal
+
+
+Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
+A:Yes
+	Q(qualciv1):GOTO:qualaid
+A:No
+	Q(qualciv2):GOTO:nomore
+
+Q(qualaid):You probably qualify for free legal aid through American Samoa Legal Aid since you earn less than 125% of the poverty line. Would you like me to open their website?
+A: [https://www.aslegalaid.org/] Yes
+	Q(6.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.aslegalaid.org/">here</a>.
+A: No
+The link is <a href="https://www.aslegalaid.org/">here</a> should you decide you would like to find out more. 
+	Q(afteruselink): GOTO:nomore
+
+Q(qualcrim): You probably qualify as indigent since you earn less than 125% of the poverty line. So you'll likely be assigned a lawyer by the judge. 
+
+Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes.
+	Q(8.1):GOTO:nomore
+A: No
+	Q(8.2):GOTO:nomore
+
+Q(noqualcrim): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes.
+	Q(9.1):GOTO:nomore
+A: No
+	Q(9.2):GOTO:nomore
+
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
