@@ -8,7 +8,7 @@ Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/h
 After: 
 <script>	
 	https://www.qnamarkup.net/i/?source=https://sonyacoding.github.io/LSC_Project/js/contig.js
-<script>
+</script>
 
 Q(1): Would you like answer some questions to find out if you qualify for free legal aid in your area? 
 A: Yes
