@@ -17,8 +17,10 @@ A:[https://www.avvo.com/find-a-lawyer] No
 	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>.
 Q(house): How many people are in your household?
 X:number
+	Q(2.1):GOTO:income
 Q(income): How much income does your household bring in per year in after tax dollars?
 X:number
+	Q(3.1):GOTO:civorcrim
 Q(civorcrim): Confirm you are facing a civil matter.
 A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]: Yes.
 
