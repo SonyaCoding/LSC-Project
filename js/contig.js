@@ -1,10 +1,10 @@
-<script>
+Q(1): <script>
 function fedpov(house,income,percentage){
 	// Determine if your income is less than or equal to 
 	// a percentage of the 2019 federal poverty guidelines 
 	// for the contiguous United States. See
 	// https://www.federalregister.gov/documents/2019/02/01/2019-00621/annual-update-of-the-hhs-poverty-guidelines
-		var line = NaN;
+A:		var line = NaN;
 		if (house == 1) {
 			line = 12490;
 		} else if (house == 2) {
