@@ -1,4 +1,4 @@
-Title: Alabama Legal Aid Qualifier
+Title: Alabama Attorney Finder
 Author: Sonya
 Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
 <div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
