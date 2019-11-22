@@ -38,5 +38,5 @@ Q(qualaid):You probably qualify for free legal aid through American Samoa Legal 
 A: [https://www.aslegalaid.org/] Yes
 	Q(6.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.aslegalaid.org/">here</a>.
 A: No
-The link is <a href="https://www.aslegalaid.org/">here</a> should you decide you would like to find out more. 
-	Q(afteruselink): GOTO:nomore
+	Q(afteruselink1): The link is <a href="https://www.aslegalaid.org/"target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink): GOTO:nomore
