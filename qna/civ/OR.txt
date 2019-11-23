@@ -2,7 +2,7 @@ Title: Oregon Attorney Finder
 Author: Sonya
 Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
 <div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
-<h2 style="text-align:center;">Oregon Legal Aid Qualifier</h2>
+<h2 style="text-align:center;">Oregon Attorney Finder</h2>
 <p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
 <p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
 After: 
@@ -36,7 +36,7 @@ A: No
 	Q(6.2):GOTO:nomore		
 
 Q(qualaid):You probably qualify for free legal aid through Legal Aid Services of Oregon since you earn less than 125% of the poverty line. Would you like me to open the services page on their website?
-A: [https://lasoregon.org/services/] Yes
+A:[https://lasoregon.org/services/] Yes
 	Q(7.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://lasoregon.org/services/">here</a>.
 A: No
 	Q(afteruselink1):The link is <a href="https://lasoregon.org/services/" target="_blank">here</a> should you decide you would like to find out more. 
