@@ -43,21 +43,21 @@ A: Southern Arizona Legal Aid, Inc.
 	Q(6.3):GOTO:qualsouth
 
 Q(qualcomm):You probably qualify for free legal aid through Community Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the apply for services page on their website?
-A: [http://www.clsaz.org/apply.html] Yes
+A:[http://www.clsaz.org/apply.html] Yes
 	Q(7.1): If the webpage didn't open in a new window/tab, you can find it <a href="http://www.clsaz.org/apply.html">here</a>.
 A: No
 	Q(afteruselink): The link is <a href="http://www.clsaz.org/apply.html" target="_blank">here</a> should you decide you would like to find out more. 
 Q(afteruselink1): GOTO:nomore
 
 Q(qualDNA):You probably qualify for free legal aid through DNA-Peoples Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the contact page on their website?
-A: [https://dnalegalservices.org/contact/] Yes
+A:[https://dnalegalservices.org/contact/] Yes
 	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://dnalegalservices.org/contact/">here</a>.
 A: No
 	Q(afteruselink4):The link is <a href="https://dnalegalservices.org/contact/" target="_blank">here</a> should you decide you would like to find out more. 
 Q(afteruselink2): GOTO:nomore
 
 Q(qualsouth):You probably qualify for free legal aid through Southern Arizona Legal Aid, Inc. since you earn less than 125% of the poverty line. Would you like me to open the contact page on their website?
-A: [https://www.sazlegalaid.org/contact] Yes
+A:[https://www.sazlegalaid.org/contact] Yes
 	Q(9.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.sazlegalaid.org/contact">here</a>.
 A: No
 	Q(afteruselink5):The link is <a href="https://www.sazlegalaid.org/contact" target="_blank">here</a> should you decide you would like to find out more. 
