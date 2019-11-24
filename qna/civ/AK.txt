@@ -39,5 +39,5 @@ Q(qualaid):You probably qualify for free legal aid through Alaska Legal Services
 A:[https://www.alsc-law.org/application/] Yes
 	Q(6.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.alsc-law.org/application/">here</a>.
 A: No
-The link is <a href="https://www.alsc-law.org/application/" target="_blank">here</a> should you decide you would like to find out more. 
-	Q(afteruselink): GOTO:nomore
+	Q(afteruselink1):The link is <a href="https://www.alsc-law.org/application/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink): GOTO:nomore
