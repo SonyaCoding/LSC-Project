@@ -1,0 +1,58 @@
+Title: Georgia Attorney Finder
+Author: Sonya
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Georgia Attorney Finder</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
+After: 
+<script src="https://sonyacoding.github.io/LSC_Project/js/contig.js"></script>
+
+Q(1): Would you like to answer some questions to find out if you qualify for free civil legal aid in your area? 
+A: Yes
+	Q(1.1):GOTO:house
+A:[https://www.avvo.com/find-a-lawyer] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
+A: What is civil legal aid?
+	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
+
+Q(house): How many people are in your household?
+X:number
+	Q(2.1):GOTO:income
+
+Q(income):How much income does your household bring in per year in after tax dollars?
+X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]:number
+Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
+A:Yes
+	Q(qualciv1):GOTO:select_one
+A:No
+	Q(qualciv2):GOTO:nomore	
+
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
+
+Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes
+	Q(6.1):GOTO:nomore
+A: No
+	Q(6.2):GOTO:nomore
+	
+Q(select_one): Select the legal services organization which is closest to you.
+A: Atlanta Legal Aid Society, Inc.
+	Q(7.1):GOTO:qualalas
+A: Georgia Legal Services Program
+	Q(7.2):GOTO:qualglsp
+
+Q(qualalas):You probably qualify for free legal aid through Atlanta Legal Aid Society, Inc. since you earn less than 125% of the poverty line. Would you like me to open the get help page on their website?
+A:[https://atlantalegalaid.org/get-help/] Yes
+	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://atlantalegalaid.org/get-help/">here</a>.
+A: No
+	Q(afteruselink): The link is <a href="https://atlantalegalaid.org/get-help/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink1): GOTO:nomore
+
+Q(qualglsp):You probably qualify for free legal aid through Georgia Legal Services Program since you earn less than 125% of the poverty line. Would you like me to open the online application page on their website?
+A:[https://gaoi.legalserver.org/modules/matter/extern_intake.php?pid=108&h=5c2a5f&] Yes
+	Q(10.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://gaoi.legalserver.org/modules/matter/extern_intake.php?pid=108&h=5c2a5f&">here</a>.
+A: No
+	Q(afteruselink4):The link is <a href="https://gaoi.legalserver.org/modules/matter/extern_intake.php?pid=108&h=5c2a5f&" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink2): GOTO:nomore
+
