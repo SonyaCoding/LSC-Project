@@ -1,0 +1,42 @@
+Title: Hawaii Attorney Finder
+Author: Sonya
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Hawaii Attorney Finder</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
+After: 
+<script src="https://sonyacoding.github.io/LSC_Project/js/HI.js"></script>
+
+Q(1): Would you like to answer some questions to find out if you qualify for free civil legal aid in your area? 
+A: Yes
+	Q(1.1):GOTO:house
+A:[https://www.avvo.com/find-a-lawyer] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
+A: What is civil legal aid?
+	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
+Q(house): How many people are in your household?
+X:number
+	Q(2.1):GOTO:income
+Q(income):How much income does your household bring in per year in after tax dollars?
+X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]:number
+Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
+A:Yes
+	Q(qualciv1):GOTO:qualaid
+A:No
+	Q(qualciv2):GOTO:nomore
+	
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
+
+Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes
+	Q(6.1):GOTO:nomore
+A: No
+	Q(6.2):GOTO:nomore
+
+Q(qualaid):You probably qualify for free legal aid through Legal Aid Society of Hawaii since you earn less than 125% of the poverty line. Would you like me to open the get help page on their website?
+A:[https://www.legalaidhawaii.org/get-help.html] Yes
+	Q(7.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.legalaidhawaii.org/get-help.html">here</a>.
+A: No
+	Q(afteruselink1): The link is <a href="https://www.legalaidhawaii.org/get-help.html" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink): GOTO:nomore
