@@ -88,7 +88,7 @@ A: No
 	Q(afteruselink6):The link is <a href="https://www.centralcallegal.org/eligibility/" target="_blank">here</a> should you decide you would like to find out more. 
 Q(afteruselink7): GOTO:nomore
 
-Q(qualgbla):You probably qualify for free legal aid through Southern Arizona Legal Aid, Inc. since you earn less than 125% of the poverty line. Would you like me to open the eligibility page on their website?
+Q(qualgbla):You probably qualify for free legal aid through Greater Bakersfield Legal Assistance, Inc. since you earn less than 125% of the poverty line. Would you like me to open the eligibility page on their website?
 A:[https://www.gbla.org/eligibilty/] Yes
 	Q(16.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.gbla.org/eligibilty/">here</a>.
 A: No
