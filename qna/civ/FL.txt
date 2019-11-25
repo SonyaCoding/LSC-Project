@@ -1,0 +1,105 @@
+Title: Florida Attorney Finder
+Author: Sonya
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Florida Attorney Finder</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
+After: 
+<script src="https://sonyacoding.github.io/LSC_Project/js/contig.js"></script>
+
+Q(1): Would you like to answer some questions to find out if you qualify for free civil legal aid in your area? 
+A: Yes
+	Q(1.1):GOTO:house
+A:[https://www.avvo.com/find-a-lawyer] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
+A: What is civil legal aid?
+	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
+
+Q(house): How many people are in your household?
+X:number
+	Q(2.1):GOTO:income
+
+Q(income):How much income does your household bring in per year in after tax dollars?
+X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]:number
+Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
+A:Yes
+	Q(qualciv1):GOTO:select_one
+A:No
+	Q(qualciv2):GOTO:nomore	
+
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
+
+Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes
+	Q(6.1):GOTO:nomore
+A: No
+	Q(6.2):GOTO:nomore
+	
+
+Q(select_one): Select the legal services organization which is closest to you.
+A: Bay Area Legal Services, Inc.
+	Q(7.1):GOTO:qualbay
+A: Coast to Coast Legal Aid of South Florida, Inc.
+	Q(7.2):GOTO:qualc2c
+A: Community Legal Services of Mid-Florida, Inc.
+	Q(7.3):GOTO:qualcls
+A: Florida Rural Legal Services, Inc.
+	Q(7.4):GOTO:qualfrls
+A: Legal Services of Greater Miami, Inc.
+	Q(7.5):GOTO:qualsgm
+A: Legal Services of North Florida, Inc.
+	Q(7.6):GOTO:qualnfl
+A: Three Rivers Legal Services, Inc.
+	Q(7.7):GOTO:qualtrls
+
+
+Q(qualbay):You probably qualify for free legal aid through Bay Area Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the get help page on their website?
+A:[https://bals.org/get-help] Yes
+	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://bals.org/get-help">here</a>.
+A: No
+	Q(afteruselink): The link is <a href="https://bals.org/get-help" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink1): GOTO:nomore
+
+Q(qualc2c):You probably qualify for free legal aid through Coast to Coast Legal Aid of South Florida, Inc. since you earn less than 125% of the poverty line. Would you like me to open the self help page on their website?
+A:[https://www.coasttocoastlegalaid.org/about-coast-to-coast/resources-bc/] Yes
+	Q(10.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.coasttocoastlegalaid.org/about-coast-to-coast/resources-bc/">here</a>.
+A: No
+	Q(afteruselink4):The link is <a href="https://www.coasttocoastlegalaid.org/about-coast-to-coast/resources-bc/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink2): GOTO:nomore
+
+Q(qualcls):You probably qualify for free legal aid through Community Legal Services of Mid-Florida, Inc. since you earn less than 125% of the poverty line. Would you like me to open the elgibility page on their website?
+A:[https://clsmf.org/apply-for-help/eligibility/] Yes
+	Q(12.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://clsmf.org/apply-for-help/eligibility/">here</a>.
+A: No
+	Q(afteruselink5):The link is <a href="https://clsmf.org/apply-for-help/eligibility/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink3): GOTO:nomore
+
+Q(qualfrls):You probably qualify for free legal aid through Florida Rural Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the apply for services page on their website?
+A:[https://www.frls.org/how-to-get-help/apply-for-services/] Yes
+	Q(14.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.frls.org/how-to-get-help/apply-for-services/">here</a>.
+A: No
+	Q(afteruselink6):The link is <a href="https://www.frls.org/how-to-get-help/apply-for-services/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink7): GOTO:nomore
+
+Q(qualsgm):You probably qualify for free legal aid through Legal Services of Greater Miami, Inc. since you earn less than 125% of the poverty line. Would you like me to open the get help page on their website?
+A:[https://www.legalservicesmiami.org/self-help] Yes
+	Q(16.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.legalservicesmiami.org/self-help">here</a>.
+A: No
+	Q(afteruselink8):The link is <a href="https://www.legalservicesmiami.org/self-help" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink9): GOTO:nomore
+
+Q(qualnfl):You probably qualify for free legal aid through Legal Services of North Florida, Inc. since you earn less than 125% of the poverty line. Would you like me to open the contact page on their website?
+A:[https://www.lsnf.org/contact/] Yes
+	Q(18.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.lsnf.org/contact/">here</a>.
+A: No
+	Q(afteruselink10):The link is <a href="https://www.lsnf.org/contact/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink11): GOTO:nomore
+
+Q(qualtrls):You probably qualify for free legal aid through Three Rivers Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the apply online page on their website?
+A:[https://www.trls.org/apply-online/] Yes
+	Q(20.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.trls.org/apply-online/">here</a>.
+A: No
+	Q(afteruselink12):The link is <a href="https://www.trls.org/apply-online/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink13): GOTO:nomore
+
