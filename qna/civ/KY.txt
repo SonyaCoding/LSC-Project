@@ -1,0 +1,75 @@
+Title: Kentucky Attorney Finder
+Author: Sonya
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Kentucky Attorney Finder</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
+After: 
+<script src="https://sonyacoding.github.io/LSC_Project/js/contig.js"></script>
+
+Q(1): Would you like to answer some questions to find out if you qualify for free civil legal aid in your area? 
+A: Yes
+	Q(1.1):GOTO:house
+A:[https://www.avvo.com/find-a-lawyer] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
+A: What is civil legal aid?
+	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
+
+Q(house): How many people are in your household?
+X:number
+	Q(2.1):GOTO:income
+Q(income):How much income does your household bring in per year in after tax dollars?
+X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]:number
+Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
+A:Yes
+	Q(qualciv1):GOTO:select_one
+A:No
+	Q(qualciv2):GOTO:nomore	
+
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
+
+Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes
+	Q(6.1):GOTO:nomore
+A: No
+	Q(6.2):GOTO:nomore
+
+Q(select_one): Select the legal services organization which is closest to you.
+A: Appalachian Research and Defense Fund of Kentucky
+	Q(7.1):GOTO:qualard
+A: Kentucky Legal Aid
+	Q(7.2):GOTO:qualkla
+A: Legal Aid of the Bluegrass
+	Q(7.3):GOTO:quallab
+A: Legal Aid Society
+	Q(7.4):GOTO:quallas
+
+Q(qualard):You probably qualify for free legal aid through Appalachian Research and Defense Fund of Kentucky since you earn less than 125% of the poverty line. Would you like me to open the get help page on their website?
+A:[https://www.ardfky.org/node/17/] Yes
+	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.ardfky.org/node/17/">here</a>.
+A: No
+	Q(afteruselink): The link is <a href="https://www.ardfky.org/node/17/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink1): GOTO:nomore
+
+Q(qualkla):You probably qualify for free legal aid through Kentucky Legal Aid since you earn less than 125% of the poverty line. Would you like me to open the how we work page on their website?
+A:[https://www.klaid.org/how-we-work] Yes
+	Q(10.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.klaid.org/how-we-work">here</a>.
+A: No
+	Q(afteruselink4):The link is <a href="https://www.klaid.org/how-we-work" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink2): GOTO:nomore
+
+Q(quallab):You probably qualify for free legal aid through Legal Aid of the Bluegrass since you earn less than 125% of the poverty line. Would you like me to open the application page on their website?
+A:[https://lablaw.org/apply-here] Yes
+	Q(12.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://lablaw.org/apply-here">here</a>.
+A: No
+	Q(afteruselink5):The link is <a href="https://lablaw.org/apply-here" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink3): GOTO:nomore
+
+
+Q(quallas):You probably qualify for free legal aid through Legal Aid Society since you earn less than 125% of the poverty line. Would you like me to open the help page on their website?
+A:[http://www.laslou.org/help-for-clients/i-need-help.html] Yes
+	Q(14.1): If the webpage didn't open in a new window/tab, you can find it <a href="http://www.laslou.org/help-for-clients/i-need-help.html">here</a>.
+A: No
+	Q(afteruselink6):The link is <a href="http://www.laslou.org/help-for-clients/i-need-help.html" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink7): GOTO:nomore
