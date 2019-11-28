@@ -36,7 +36,7 @@ A:[https://www.avvo.com/find-a-lawyer] Yes
 A: No
 	Q(6.2):GOTO:nomore
 
-Q(qualaid):You probably qualify for free legal aid through Pine Tree Legal Assistance, Inc. since you earn less than 125% of the poverty line. Would you like me to open the services page on their website?
+Q(qualaid):You probably qualify for free legal aid through Pine Tree Legal Assistance, Inc. since you earn less than 125% of the poverty line. Would you like me to open the contact us page on their website?
 A:[https://ptla.org/contact-us] Yes
 	Q(7.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://ptla.org/contact-us">here</a>.
 A: No
