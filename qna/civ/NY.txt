@@ -1,0 +1,110 @@
+Title: New York Attorney Finder
+Author: Sonya
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">New York Attorney Finder</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
+After: 
+<script src="https://sonyacoding.github.io/LSC_Project/js/contig.js"></script>	
+
+Q(1): Would you like to answer some questions to find out if you qualify for free civil legal aid in your area? 
+A: Yes
+	Q(1.1):GOTO:house
+A:[https://www.avvo.com/find-a-lawyer] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
+A: What is civil legal aid?
+	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
+
+Q(house): How many people are in your household? Please enter your answer as a number. 
+X:number
+	Q(2.1):GOTO:income
+Q(income): How much income does your household bring in per year in after tax dollars? Please enter your answer as a number without a comma (Example: $5,000 should be entered as 5000).
+X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]:number
+Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
+A:Yes
+	Q(qualciv1):GOTO:select_one
+A:No
+	Q(qualciv2):GOTO:nomore
+
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
+
+
+Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes
+	Q(6.1):GOTO:nomore
+A: No
+	Q(6.2):GOTO:nomore		
+
+
+Q(select_one): Select the legal services organization which is closest to you.
+A: Legal Aid Society of Mid-New York, Inc.
+	Q(7.1):GOTO:qualmny
+A: Legal Aid Society of Northeastern New York, Inc.
+	Q(7.2):GOTO:qualneny
+A: Legal Assistance of Western New York, Inc.
+	Q(7.3):GOTO:qualwny
+A: Legal Services NYC
+	Q(7.4):GOTO:qualnyc
+A: Legal Services of the Hudson Valley
+	Q(7.5):GOTO:quallshv
+A: Nassau/Suffolk Law Services Committee, Inc.
+	Q(7.6):GOTO:qualnsls
+A: Neighborhood Legal Services, Inc.
+	Q(7.7):GOTO:qualnls
+
+
+Q(qualmny):You probably qualify for free legal aid through Legal Aid Society of Mid-New York, Inc. since you earn less than 125% of the poverty line. Would you like me to open the help line page on their website?
+A:[http://www.lasmny.org/Mid-NY/HelpLine.shtm] Yes
+	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="http://www.lasmny.org/Mid-NY/HelpLine.shtm">here</a>.
+A: No
+	Q(afteruselink): The link is <a href="http://www.lasmny.org/Mid-NY/HelpLine.shtm" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink1): GOTO:nomore
+
+
+Q(qualneny):You probably qualify for free legal aid through Legal Aid Society of Northeastern New York, Inc. since you earn less than 125% of the poverty line. Would you like me to open the get help page on their website?
+A:[https://www.lasnny.org/get-help/] Yes
+	Q(10.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.lasnny.org/get-help/">here</a>.
+A: No
+	Q(afteruselink4):The link is <a href="https://www.lasnny.org/get-help/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink2): GOTO:nomore
+
+
+Q(qualwny):You probably qualify for free legal aid through Legal Assistance of Western New York, Inc. since you earn less than 125% of the poverty line. Would you like me to open the find a lawyer page on their website?
+A:[https://www.lawny.org/node/54/find-lawyer] Yes
+	Q(12.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.lawny.org/node/54/find-lawyer">here</a>.
+A: No
+	Q(afteruselink5):The link is <a href="https://www.lawny.org/node/54/find-lawyer" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink3): GOTO:nomore
+
+
+Q(qualnyc):You probably qualify for free legal aid through Legal Services NYC since you earn less than 125% of the poverty line. Would you like me to open the get help page on their website?
+A:[https://www.legalservicesnyc.org/component/content/article/903?Itemid=191] Yes
+	Q(14.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.legalservicesnyc.org/component/content/article/903?Itemid=191">here</a>.
+A: No
+	Q(afteruselink6):The link is <a href="https://www.legalservicesnyc.org/component/content/article/903?Itemid=191" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink7): GOTO:nomore
+
+
+Q(quallshv):You probably qualify for free legal aid through Legal Services of the Hudson Valley since you earn less than 125% of the poverty line. Would you like me to open the access services page on their website?
+A:[https://lshv.org/request-legal-assistance-now/] Yes
+	Q(16.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://lshv.org/request-legal-assistance-now/">here</a>.
+A: No
+	Q(afteruselink8):The link is <a href="https://lshv.org/request-legal-assistance-now/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink9): GOTO:nomore
+
+
+Q(qualnsls):You probably qualify for free legal aid through Nassau/Suffolk Law Services Committee, Inc. since you earn less than 125% of the poverty line. Would you like me to open the contact us page on their website?
+A:[https://www.nslawservices.org/contact-us] Yes
+	Q(18.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.nslawservices.org/contact-us">here</a>.
+A: No
+	Q(afteruselink10):The link is <a href="https://www.nslawservices.org/contact-us" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink11): GOTO:nomore
+
+
+Q(qualnls):You probably qualify for free legal aid through Neighborhood Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the contact us page on their website?
+A:[https://nls.org/contact-forms/] Yes
+	Q(20.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://nls.org/contact-forms/">here</a>.
+A: No
+	Q(afteruselink12):The link is <a href="https://nls.org/contact-forms/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink13): GOTO:nomore
