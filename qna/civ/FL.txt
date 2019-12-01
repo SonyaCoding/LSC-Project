@@ -16,11 +16,11 @@ A:[https://www.avvo.com/find-a-lawyer] No
 A: What is civil legal aid?
 	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
 
-Q(house): How many people are in your household?
+Q(house): How many people are in your household? Please enter your answer as a number. 
 X:number
 	Q(2.1):GOTO:income
 
-Q(income):How much income does your household bring in per year in after tax dollars?
+Q(income):How much income does your household bring in per year in after tax dollars? Please enter your answer as a number without a comma (Example: $5,000 should be entered as 5000).
 X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]:number
 Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
 A:Yes
