@@ -1,0 +1,90 @@
+Title: New Jersey Attorney Finder
+Author: Sonya
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">New Jersey Attorney Finder</h2>
+<p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
+<p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
+After: 
+<script src="https://sonyacoding.github.io/LSC_Project/js/contig.js"></script>	
+
+Q(1): Would you like to answer some questions to find out if you qualify for free civil legal aid in your area? 
+A: Yes
+	Q(1.1):GOTO:house
+A:[https://www.avvo.com/find-a-lawyer] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
+A: What is civil legal aid?
+	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
+
+Q(house): How many people are in your household? Please enter your answer as a number. 
+X:number
+	Q(2.1):GOTO:income
+Q(income): How much income does your household bring in per year in after tax dollars? Please enter your answer as a number without a comma (Example: $5,000 should be entered as 5000).
+X[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('qualciv') } else { goto('noqualciv') } ]:number
+Q(qualciv): You probably qualify as indigent since you earn less than 125% of the poverty line. Would you like to find out more about free legal aid in your area?
+A:Yes
+	Q(qualciv1):GOTO:select_one
+A:No
+	Q(qualciv2):GOTO:nomore
+
+Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
+
+
+Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
+A:[https://www.avvo.com/find-a-lawyer] Yes
+	Q(6.1):GOTO:nomore
+A: No
+	Q(6.2):GOTO:nomore		
+
+
+Q(select_one): Select the legal services organization which is closest to you.
+A: Central Jersey Legal Services, Inc.
+	Q(7.1):GOTO:qualcjls
+A: Essex-Newark Legal Services Project, Inc.
+	Q(7.2):GOTO:qualenls
+A: Legal Services of Northwest Jersey
+	Q(7.3):GOTO:quallsnwj
+A: Northeast New Jersey Legal Services Corporation
+	Q(7.4):GOTO:qualnenj
+A: South Jersey Legal Services, Inc.
+	Q(7.5):GOTO:qualsjls
+
+
+Q(qualcjls):You probably qualify for free legal aid through Central Jersey Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open their web page?
+A:[https://www.lsnj.org/cjls/] Yes
+	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.lsnj.org/cjls/">here</a>.
+A: No
+	Q(afteruselink): The link is <a href="https://www.lsnj.org/cjls/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink1): GOTO:nomore
+
+
+Q(qualenls):You probably qualify for free legal aid through Essex-Newark Legal Services Project, Inc. since you earn less than 125% of the poverty line. Would you like me to open their web page?
+A:[https://www.lsnj.org/enls/] Yes
+	Q(10.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.lsnj.org/enls/">here</a>.
+A: No
+	Q(afteruselink4):The link is <a href="https://www.lsnj.org/enls/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink2): GOTO:nomore
+
+
+Q(quallsnwj):You probably qualify for free legal aid through Legal Services of Northwest Jersey since you earn less than 125% of the poverty line. Would you like me to open the main page on their website?
+A:[https://www.lsnj.org/lsnwj/] Yes
+	Q(12.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.lsnj.org/lsnwj/">here</a>.
+A: No
+	Q(afteruselink5):The link is <a href="https://www.lsnj.org/lsnwj/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink3): GOTO:nomore
+
+
+Q(qualnenj):You probably qualify for free legal aid through Northeast New Jersey Legal Services Corporation since you earn less than 125% of the poverty line. Would you like me to open the contact page on their website?
+A:[https://www.northeastnjlegalservices.org/contactus] Yes
+	Q(14.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.northeastnjlegalservices.org/contactus">here</a>.
+A: No
+	Q(afteruselink6):The link is <a href="https://www.northeastnjlegalservices.org/contactus" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink7): GOTO:nomore
+
+
+Q(qualsjls):You probably qualify for free legal aid through South Jersey Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the main page on their website?
+A:[https://www.lsnj.org/sjls/] Yes
+	Q(16.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.lsnj.org/sjls/">here</a>.
+A: No
+	Q(afteruselink8):The link is <a href="https://www.lsnj.org/sjls/" target="_blank">here</a> should you decide you would like to find out more. 
+Q(afteruselink9): GOTO:nomore
