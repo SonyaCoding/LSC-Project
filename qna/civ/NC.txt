@@ -1,8 +1,8 @@
-Title: New Carolina Attorney Finder
+Title: North Carolina Attorney Finder
 Author: Sonya
 Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
 <div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
-<h2 style="text-align:center;">New Carolina Attorney Finder</h2>
+<h2 style="text-align:center;">North Carolina Attorney Finder</h2>
 <p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
 <p>Answer the following questions to help find an attorney or see if you qualify for legal aid.</p>
 After: 
