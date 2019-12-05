@@ -15,7 +15,7 @@ A:[https://www.avvo.com/find-a-lawyer] No
 	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
 A: What is civil legal aid?
 	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
-Q(house): How many people are in your household? Please enter your answer as a number.
+Q(house): How many people are in your household? Please enter your answer as a number. GOTO:1
 X:number
 	Q(2.1):GOTO:income
 Q(income):How much income does your household bring in per year in after tax dollars? Please enter your answer as a number without a comma (Example: $5,000 should be entered as 5000).
@@ -36,7 +36,6 @@ A: No
 
 Q(qualaid):You probably qualify for free legal aid through American Samoa Legal Aid since you earn less than 125% of the poverty line. Would you like me to open their website?
 A:[https://www.aslegalaid.org/] Yes
-	Q(6.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.aslegalaid.org/">here</a>.
+	Q(aid1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.aslegalaid.org/">here</a>. GOTO:nomore
 A: No
-	Q(afteruselink1): The link is <a href="https://www.aslegalaid.org/" target="_blank">here</a> should you decide you would like to find out more. 
-Q(afteruselink): GOTO:nomore
+	Q(afteruselink1): The link is <a href="https://www.aslegalaid.org/" target="_blank">here</a> should you decide you would like to find out more.  GOTO:nomore
