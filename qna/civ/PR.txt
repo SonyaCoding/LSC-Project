@@ -14,7 +14,7 @@ A: Yes
 A:[https://www.avvo.com/find-a-lawyer] No
 	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
 A: What is civil legal aid?
-	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  
+	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc. GOTO:1 
 
 Q(house): How many people are in your household? Please enter your answer as a number. 
 X:number
@@ -35,25 +35,20 @@ A:[https://www.avvo.com/find-a-lawyer] Yes
 A: No
 	Q(6.2):GOTO:nomore		
 
-
 Q(select_one): Select the legal services organization which is closest to you.
 A: Community Law Office, Inc.
 	Q(7.1):GOTO:qualclo
 A: Puerto Rico Legal Services, Inc.
 	Q(7.2):GOTO:qualprls
 
-
 Q(qualclo):You probably qualify for free legal aid through Community Law Office, Inc. since you earn less than 125% of the poverty line. Would you like me to open their website?
 A:[http://www.derecho.inter.edu/servicios/oficina-legal-comunidad] Yes
-	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="http://www.derecho.inter.edu/servicios/oficina-legal-comunidad">here</a>.
+	Q(8.1): If the webpage didn't open in a new window/tab, you can find it <a href="http://www.derecho.inter.edu/servicios/oficina-legal-comunidad">here</a>. GOTO:nomore
 A: No
-	Q(afteruselink): The link is <a href="http://www.derecho.inter.edu/servicios/oficina-legal-comunidad" target="_blank">here</a> should you decide you would like to find out more. 
-Q(afteruselink1): GOTO:nomore
-
+	Q(afteruselink): The link is <a href="http://www.derecho.inter.edu/servicios/oficina-legal-comunidad" target="_blank">here</a> should you decide you would like to find out more. GOTO:nomore
 
 Q(qualprls):You probably qualify for free legal aid through Puerto Rico Legal Services, Inc. since you earn less than 125% of the poverty line. Would you like me to open the contact us page on their website?
 A:[https://www.servicioslegales.org/contact-2/] Yes
-	Q(10.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.servicioslegales.org/contact-2/">here</a>.
+	Q(10.1): If the webpage didn't open in a new window/tab, you can find it <a href="https://www.servicioslegales.org/contact-2/">here</a>. GOTO:nomore
 A: No
-	Q(afteruselink4):The link is <a href="https://www.servicioslegales.org/contact-2/" target="_blank">here</a> should you decide you would like to find out more. 
-Q(afteruselink2): GOTO:nomore
+	Q(afteruselink4):The link is <a href="https://www.servicioslegales.org/contact-2/" target="_blank">here</a> should you decide you would like to find out more. GOTO:nomore
