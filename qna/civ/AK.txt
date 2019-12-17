@@ -31,9 +31,9 @@ Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have 
 
 Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
 A:[https://www.avvo.com/find-a-lawyer] Yes
-	Q(6.1):GOTO:nomore
+	Q(noqual):GOTO:nomore
 A: No
-	Q(6.2):GOTO:nomore		
+	Q(noqual2):GOTO:nomore		
 
 Q(qualaid):You probably qualify for free legal aid through Alaska Legal Services Corporation since you earn less than 125% of the poverty line. Would you like me to open the apply for services page on their website?
 A:[https://www.alsc-law.org/application/] Yes
