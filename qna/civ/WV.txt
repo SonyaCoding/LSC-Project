@@ -11,8 +11,8 @@ After:
 Q(1): Would you like to answer some questions to find out if you qualify for free civil legal aid in your area? 
 A: Yes
 	Q(1.1):GOTO:house
-A:[https://www.avvo.com/find-a-lawyer] No
-	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://www.avvo.com/find-a-lawyer">here</a>. GOTO:nomore
+A:[https://wvlawyerreferral.org/] No
+	Q(referral):If the referral site didn't open in a new window/tab, you can find it <a href="https://wvlawyerreferral.org/">here</a>. GOTO:nomore
 A: What is civil legal aid?
 	Q(whatis): Civil legal aid is free legal assistance provided to those who qualify based on financial eligibility requirements. Civil indicates that the action is not criminal, it could relate to many types of issues such as housing, family, injury, etc.  GOTO:1
 
@@ -31,7 +31,7 @@ A:No
 Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have a nice day.
 
 Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
-A:[https://www.avvo.com/find-a-lawyer] Yes
+A:[https://wvlawyerreferral.org/] Yes
 	Q(6.1):GOTO:nomore
 A: No
 	Q(6.2):GOTO:nomore
