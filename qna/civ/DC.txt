@@ -32,7 +32,7 @@ Q(nomore): I'm afraid there's nothing else I can help you with. I hope you have 
 
 
 Q(noqualciv): You probably won't qualify as indigent since you earn more than 125% of the poverty line. So you'll probably need to hire an attorney. Would you like to search for one near you?
-A:[https://www.avvo.com/find-a-lawyer] Yes
+A:[https://www.avvo.com/all-lawyers/dc.html] Yes
 	Q(6.1):GOTO:nomore
 A: No
 	Q(6.2):GOTO:nomore		
